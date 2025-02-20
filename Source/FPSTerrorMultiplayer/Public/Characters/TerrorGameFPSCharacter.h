@@ -12,6 +12,7 @@ class UInputMappingContext;
 struct FInputActionValue;
 
 
+
 UCLASS()
 class FPSTERRORMULTIPLAYER_API ATerrorGameFPSCharacter : public ACharacter
 {
@@ -22,6 +23,14 @@ class FPSTERRORMULTIPLAYER_API ATerrorGameFPSCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
+
+	APlayerCameraManager* PlayerCameraManager;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float MinPitch = -55.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float MaxPitch = 55.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
