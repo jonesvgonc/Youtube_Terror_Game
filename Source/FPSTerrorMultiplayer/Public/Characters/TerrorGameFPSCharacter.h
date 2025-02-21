@@ -9,6 +9,7 @@
 class UCameraComponent;
 class UInputAction;
 class UInputMappingContext;
+class UStaticMeshComponent;
 struct FInputActionValue;
 
 
@@ -37,6 +38,9 @@ class FPSTERRORMULTIPLAYER_API ATerrorGameFPSCharacter : public ACharacter
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FirstPersonCameraComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Light Components", meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* FlashLight;
 
 public:
 	// Sets default values for this character's properties
