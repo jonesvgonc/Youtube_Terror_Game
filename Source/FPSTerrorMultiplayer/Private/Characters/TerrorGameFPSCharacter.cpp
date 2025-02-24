@@ -67,6 +67,8 @@ void ATerrorGameFPSCharacter::Look(const FInputActionValue& Value)
 
 		AddControllerPitchInput(LookAxisVector.Y);
 
+		SetFlashLightRotation(LookAxisVector.Y);
+
 		FRotator rot = Controller->GetControlRotation();
 		PlayerCameraManager->LimitViewPitch(rot, MinPitch, MaxPitch);
 
@@ -108,5 +110,18 @@ void ATerrorGameFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATerrorGameFPSCharacter::Look);
 	}
 
+}
+
+void ATerrorGameFPSCharacter::SetFlashLightRotation(float rotValue)
+{
+	pitch += (-1 * rotValue);
+	if (pitch > 72.f)
+	{
+		pitch = 72.f;
+	}
+	else if (pitch < 0.f)
+	{
+		pitch = 0.f;
+	}
 }
 

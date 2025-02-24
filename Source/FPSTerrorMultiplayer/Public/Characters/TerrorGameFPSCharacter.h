@@ -59,11 +59,13 @@ protected:
 	virtual void NotifyControllerChanged() override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void SetFlashLightRotation(float rotValue);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
-	
+	float pitch = 50.f;
 
 };

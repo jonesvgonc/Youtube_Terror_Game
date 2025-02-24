@@ -18,6 +18,8 @@ class FPSTERRORMULTIPLAYER_API UPlayerAnimInstance : public UAnimInstance
 	float Direction;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation-Variables", meta = (AllowPrivateAccess = "true"))
 	float Speed;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation-Variables", meta = (AllowPrivateAccess = "true"))
+	float Pitch;
 
 public:
 	UFUNCTION(BlueprintCallable)

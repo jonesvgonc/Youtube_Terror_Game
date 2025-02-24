@@ -2,6 +2,7 @@
 
 
 #include "Animation/PlayerAnimInstance.h"
+#include "../../Public/Characters/TerrorGameFPSCharacter.h"
 
 void UPlayerAnimInstance::SetDirectionAndSpeed()
 {
@@ -13,4 +14,15 @@ void UPlayerAnimInstance::SetDirectionAndSpeed()
 	Speed = static_cast<float>(PawRef->GetVelocity().Length());
 
 	Direction = static_cast<float>(CalculateDirection(PawRef->GetVelocity(), PawRef->GetActorRotation()));
+
+
+	APlayerController* myController = GetWorld()->GetFirstPlayerController();
+	if (myController)
+	{
+		ATerrorGameFPSCharacter* myCharacter = static_cast<ATerrorGameFPSCharacter*>(myController->GetCharacter());
+		if (myCharacter)
+		{
+			Pitch = myCharacter->pitch;
+		}
+	}
 }
